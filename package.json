@@ -1,0 +1,33 @@
+{
+  "name": "claunchergo",
+  "version": "1.0.0",
+  "description": "CLauncherGo — Minecraft desktop launcher",
+  "main": "src/main.js",
+  "author": "CLauncherGo",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis",
+    "dist:win:portable": "electron-builder --win portable"
+  },
+  "dependencies": {
+    "minecraft-launcher-core": "^3.18.1"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.claunchergo.desktop",
+    "productName": "CLauncherGo",
+    "directories": { "output": "release", "buildResources": "assets" },
+    "files": ["src/**/*", "assets/**/*", "package.json", "!release/**/*"],
+    "win": { "target": ["nsis", "portable"], "artifactName": "CLauncherGo-${version}-${arch}.${ext}" },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

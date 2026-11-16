@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLauncherGo</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="shell">
+<aside class="sidebar">
+  <div class="brand"><div class="cube">▦</div><div><b>CLauncher<span>Go</span></b><small>MINECRAFT LAUNCHER</small></div></div>
+  <nav><button class="nav active" data-page="home">⌂ <span>Главная</span></button><button class="nav" data-page="versions">▣ <span>Версии</span></button><button class="nav" data-page="mods">✣ <span>Моды</span></button><button class="nav" data-page="settings">⚙ <span>Настройки</span></button></nav>
+  <div class="sidebar-bottom"><div class="profile"><div class="avatar">⛏</div><div><b id="profileName">Player</b><small>Offline профиль</small></div></div><button id="folderBtn" class="subtle">Открыть папку игры ↗</button></div>
+</aside>
+<main>
+<header><div><div class="eyebrow">MINECRAFT JAVA EDITION</div><h1 id="pageTitle">Добро пожаловать!</h1></div><div class="top-right"><span class="status-dot"></span> Локальный профиль <button id="fullscreenBtn" class="icon-btn">⛶</button></div></header>
+<section id="home" class="page">
+  <div class="hero"><div class="hero-content"><div class="pill">✦ ВАШ МИР НАЧИНАЕТСЯ ЗДЕСЬ</div><h2>Играй.<br>Исследуй.<br><span>Создавай.</span></h2><p>Твой Minecraft — в одном месте.</p><button id="playBtn" class="primary">▶ ИГРАТЬ</button></div><div class="hero-mark">C<span>G</span></div></div>
+  <div class="cards">
+    <div class="panel"><div class="panel-head"><h3>Игровой профиль</h3><span class="tag">OFFLINE</span></div><label>Имя игрока</label><input id="username" maxlength="16" value="Player"><label>Версия Minecraft</label><select id="versionSelect"><option value="release">Последняя Release</option></select><div class="hint">Доступные версии загружаются из официального манифеста Mojang.</div></div>
+    <div class="panel"><div class="panel-head"><h3>Память Java</h3><b><span id="ramValue">4</span> ГБ</b></div><input id="ram" type="range" min="2" max="16" value="4"><div class="range-labels"><span>2 ГБ</span><span>16 ГБ</span></div><div class="hint" id="javaStatus">Проверка Java…</div></div>
+  </div>
+  <div class="panel activity"><div class="panel-head"><h3>Состояние запуска</h3><span id="stateLabel" class="muted">Ожидание</span></div><div class="progress"><div id="progressBar"></div></div><pre id="log">CLauncherGo готов к работе.</pre></div>
+</section>
+<section id="versions" class="page hidden"><div class="panel"><div class="panel-head"><h3>Версии Minecraft</h3><button id="refreshVersions" class="secondary">↻ Обновить список</button></div><input id="versionSearch" placeholder="Поиск версии…"><div id="versionList" class="version-list">Загрузка списка версий…</div></div></section>
+<section id="mods" class="page hidden"><div class="panel"><h3>Моды и дополнения</h3><p class="muted">Управление модами появится после установки профиля с Forge или Fabric. Помещайте .jar-файлы в папку mods выбранного профиля.</p><button class="secondary" id="folderBtn2">Открыть папку игры</button></div></section>
+<section id="settings" class="page hidden"><div class="panel"><h3>Настройки</h3><label>Имя игрока</label><input id="settingsUsername" maxlength="16"><label>Оперативная память (ГБ)</label><input id="settingsRam" type="number" min="2" max="16"><label>Папка игры</label><div class="hint">Хранится в пользовательской папке приложения: CLauncherGo/game</div><button id="saveSettings" class="primary small">Сохранить настройки</button></div></section>
+<footer>CLauncherGo <span>•</span> Неофициальный лаунчер. Minecraft принадлежит Mojang/Microsoft.</footer>
+</main></div><script src="renderer.js"></script></body></html>
